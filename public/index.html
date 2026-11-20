@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AANM&amp;VVRSR Campus</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=DM+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+<div id="login">
+  <svg id="scene" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a1d8f"/><stop offset=".55" stop-color="#8a5fe0"/><stop offset="1" stop-color="#e9dcff"/></linearGradient></defs>
+    <rect width="1200" height="800" fill="url(#sky)"/>
+    <circle cx="930" cy="170" r="60" fill="#fff" opacity=".85"/>
+    <g fill="#fff" opacity=".35"><ellipse cx="220" cy="150" rx="90" ry="16"/><ellipse cx="300" cy="170" rx="60" ry="12"/><ellipse cx="640" cy="110" rx="110" ry="14"/></g>
+    <g fill="#5a35b8" opacity=".55"><rect x="40" y="430" width="170" height="260"/><rect x="230" y="480" width="120" height="210"/><rect x="960" y="440" width="190" height="250"/><rect x="800" y="500" width="130" height="190"/></g>
+    <g fill="#4a2a9e"><rect x="330" y="400" width="540" height="300"/><polygon points="310,400 600,320 890,400"/><rect x="560" y="190" width="80" height="210"/><polygon points="550,190 600,130 650,190"/></g>
+    <circle cx="600" cy="240" r="26" fill="#f4eeff"/><path d="M600 224v16l10 8" stroke="#4a2a9e" stroke-width="3" fill="none"/>
+    <g fill="#f4eeff" opacity=".9"><rect x="370" y="440" width="26" height="46" rx="13"/><rect x="430" y="440" width="26" height="46" rx="13"/><rect x="490" y="440" width="26" height="46" rx="13"/><rect x="684" y="440" width="26" height="46" rx="13"/><rect x="744" y="440" width="26" height="46" rx="13"/><rect x="804" y="440" width="26" height="46" rx="13"/><rect x="370" y="540" width="26" height="46" rx="13"/><rect x="430" y="540" width="26" height="46" rx="13"/><rect x="490" y="540" width="26" height="46" rx="13"/><rect x="684" y="540" width="26" height="46" rx="13"/><rect x="744" y="540" width="26" height="46" rx="13"/><rect x="804" y="540" width="26" height="46" rx="13"/><rect x="572" y="600" width="56" height="100" rx="28"/></g>
+    <rect y="690" width="1200" height="110" fill="#2f1a73"/>
+    <g fill="#6e47d4"><circle cx="120" cy="705" r="34"/><circle cx="1090" cy="700" r="40"/><circle cx="260" cy="715" r="26"/><circle cx="980" cy="715" r="28"/></g>
+    <path d="M520 800 L580 700 L620 700 L680 800Z" fill="#e9dcff" opacity=".8"/>
+  </svg>
+  <div class="glass" id="loginCard">
+    <div class="brand"><div class="logo"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg></div><b>AANM&amp;VVRSR Campus</b></div>
+    <p class="sub">Sign in to your campus portal</p>
+    <div class="tabs" role="tablist" id="roleTabs">
+      <span class="pill" id="pill"></span>
+      <button role="tab" aria-selected="true" data-role="student">Student</button>
+      <button role="tab" aria-selected="false" data-role="faculty">Faculty</button>
+      <button role="tab" aria-selected="false" data-role="admin">Admin</button>
+    </div>
+    <form id="loginForm">
+      <label for="uid" id="uidLabel">Roll number</label>
+      <input id="uid" value="AV23CSE017" autocomplete="off">
+      <label for="pw">Password</label>
+      <input id="pw" type="password" value="demo1234">
+      <div id="loginErr" class="err" hidden></div>
+      <button class="btn block" type="submit">Sign in</button>
+    </form>
+    <p class="hint">Demo password: demo1234. New to the college? <button class="link" id="regBtn" type="button">Sign up</button></p>
+  </div>
+</div>
+
+<div id="app" hidden>
+  <header class="top">
+    <div class="brand" style="margin:0"><div class="logo"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg></div><b class="hide-s">AANM&amp;VVRSR Campus</b></div>
+    <div class="tools">
+      <button class="icon-btn" id="palBtn" title="Quick search (Ctrl+K)" aria-label="Quick search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button>
+      <div style="position:relative">
+        <button class="icon-btn" id="bell" aria-label="Notifications"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg><span class="dot" id="bellDot">3</span></button>
+        <div class="drop" id="bellDrop" hidden></div>
+      </div>
+      <button class="icon-btn" id="theme" aria-label="Toggle dark mode"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+      <div class="avatar" id="avatar">AR</div>
+      <button class="btn ghost sm" id="out">Sign out</button>
+    </div>
+  </header>
+  <div class="shell">
+    <aside class="side"><div class="rolechip" id="roleChip"></div><nav id="nav" aria-label="Sections"></nav></aside>
+    <main id="view"></main>
+  </div>
+</div>
+
+<div id="lb" hidden>
+  <button class="lb-x" id="lbX" aria-label="Close">&times;</button>
+  <button class="lb-n prev" id="lbP" aria-label="Previous">&lsaquo;</button>
+  <div class="lb-body"><div id="lbMedia"></div><div class="cap" id="lbCap"></div></div>
+  <button class="lb-n next" id="lbN" aria-label="Next">&rsaquo;</button>
+</div>
+<div id="pal" hidden><div class="box"><input id="palIn" placeholder="Jump to a page or action" autocomplete="off"><div id="palList"></div></div></div>
+<div id="toasts" aria-live="polite"></div>
+
+<script src="/app.js"></script>
+</body>
+</html>
